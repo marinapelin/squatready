@@ -1,0 +1,91 @@
+@import url("reset.css");
+body{
+	background-color: #026873;
+    background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
+    linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
+    linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
+    linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
+	background-size: 13px, 29px, 37px, 53px;
+    }
+div{
+	display: inline-block;
+	margin-left: 20px;
+	height: 100px;  
+	background-size: contain;
+	margin-top: 0%;
+    }
+.block1{
+	border-radius: 2px;
+	border: solid black;
+	background-image: url(gifblink.gif);
+	width:15%;
+	margin-left: 10%;
+    }
+.block2{
+	/*background-image: url(imgTinyartists.jpg);*/
+	background-color: #66Bfb7;
+	width: 45%;
+    }
+.block3{
+	border-radius: 2px;
+	border: solid black;
+	background-image: url(gifblink.gif);
+	width: 15%;
+    }
+#infbox{
+	background-color: #f5f5f5;
+	margin:10% 30%;
+    }
+form{
+	display: block;
+    width:250px;
+    padding:15px 20px;
+    margin-left:40%;
+    /*padding:4% 30%;*/
+    background:#f5f5f5; 
+    border-radius: 10px;
+    }
+label{
+    display:block;
+	margin-top:1em;
+	margin-bottom:0.5em;
+    }
+label:first-child{
+    margin-top:0;
+    }
+input[type="text"],
+input[type="password"]{
+    width:100%;
+    border:1px solid #ccc;
+	padding:4px 5px;
+	background:white;
+	border-radius: 5px;
+	box-shadow:inset 0 4px 2px rgba(0, 0, 0, 0.2);
+	box-sizing:border-box;
+	}
+input[type="text"]:focus,
+input[type="password"]:focus{
+    box-shadow:0 0 5px rgba(50, 200, 255, 0.5);
+	outline: none;
+	}
+input[type="submit"]{
+    display:block;
+	margin-top:1em;
+	padding:5px 15px;
+	font-weight: bold;
+	color:#333;
+	background: white;
+	border: none;
+	border-radius: 12px; 
+	background-image: linear-gradient(to bottom, #fff, #ddd);
+	box-shadow:inset 0 1px 2px rgba(0, 0, 0, 0.3);
+	text-shadow:0 1px 1px white;
+	}	
+	@media (max-width: 599px){
+	.block3{
+		display:none;
+	}
+	.block1{
+		display: none;
+	}
+}

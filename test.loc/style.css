@@ -1,0 +1,267 @@
+@import url("reset.css");
+
+p {
+    text-decoration: none;
+    color: #777;
+    font-size: 14px;
+}
+#wrap {
+	background:white;
+	margin: 0 auto;
+	
+}
+#wrap2 {
+	background: #66Bfb7;
+	margin: 0 auto;
+}
+.line {
+	height: 10px;
+	width: 100%;
+    background: #66Bfb7;
+    margin: 0 auto;
+}
+#menu {
+	margin-left:15px;
+	text-align:center;
+	margin-top: 20px;
+}
+#menu ul li {
+	padding-right: 8px;
+}
+#menu ul li a {
+	color: #fff;
+	text-decoration: none;
+}
+#menu ul li a:hover {
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	background: #333;
+}
+#m1 {
+	display:block;
+	width: 110px;
+	height: 30px;
+	background: #66Bfb7;
+	padding-top: 10px; 
+	padding-left: 9px;
+}
+#SiteName{
+	float: top;
+	text-decoration: none;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: xx-large;
+	color: white; 
+	margin-left: 24%;
+	width: 100%;
+	display:block;
+	width: 200px;
+	height: 30px;
+	background: #66Bfb7;
+	padding-top: 10px; 
+	padding-left: 9px;	
+}
+/*HEADER*/
+/*
+#header {
+	margin-top: 70px;
+	margin-left: 25px;
+}*/
+#header_top a {
+    color:  #777;
+    text-decoration: none;
+    font-size: 36px;
+}
+#header_top a:hover {
+    color: #326154;
+    text-decoration: none;
+    font-size: 36px;
+    font-weight: 48px;
+}
+#header_bot p {
+	font-size: 16px;
+	padding-top: 5px;
+	padding-left: 2px;
+	font-style: italic;
+}
+/*TEXT*/
+p{
+	font-size: 30px;
+}
+#text p {
+	margin-left: 25px;
+	text-indent: 20px;
+}
+#text {
+		width: 758px;
+		padding-top: 5px;
+}
+/*COPYRIGHT*/
+#cop {
+	margin-left: 25px;	
+	color: #66Bfb7;
+	text-decoration: none;
+	font-size: 12px;
+}
+#cop a {
+	color: #777;
+	text-decoration: none;
+	font-size: 12px;
+}
+#cop a:hover {
+	color: #777;
+	text-decoration: underline;
+	font-size: 12px;
+}
+/*IMG*/
+.gifsize{
+	height: 100px;
+}
+.mini {
+	height: 200px;
+	float: right;
+    margin-right: 25px;
+	border: 4px double black; 
+}
+
+.minilogo {
+	height: 50px;
+	
+	border-radius: 80%;
+	
+}
+.normal {
+	height: 300px;
+	float: right;
+    margin-right: 25px;
+}
+.medium {
+	height:400px;
+	float: right;
+    margin-right: 25px;
+}
+.large {
+	border-radius: 80%;
+
+	height: 400px;
+	float: left;
+}
+/* #container {
+	display: flexbox;
+} */
+/* .fading img:hover{
+	width:50%;
+	height: auto;
+} */
+.leftimg {
+    float:left; /* Выравнивание по левому краю */
+    margin: 7px 7px 7px 0; /* Отступы вокруг картинки */
+}
+.rightimg  {
+    float: right; /* Выравнивание по правому краю  */ 
+    margin: 7px 0 7px 7px; /* Отступы вокруг картинки */
+}
+.round{
+	height: 100px;
+	border-radius: 80%;
+}
+.btn {
+	width: 150px;
+	margin: 50px auto;
+	padding: 15px 20px;
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+	background: #3498db;
+	cursor: pointer;
+}
+#next{
+    float:right; /* Выравнивание по левому краю */
+}
+#back{
+    float:left; /* Выравнивание по левому краю */
+}
+@media (min-width: 1000px){
+	#wrap {
+		width: 1010px;
+	}
+	#wrap2 {
+		width: 1010px;
+	}
+	body{
+		background-image: url(backgr2.jpg);
+		background-color:lightblue;
+	}
+	.hat{
+	    background-size: 15%;
+	}
+    .horizontal{
+	    margin-left: 40%;
+    }
+}
+@media (max-width: 1000px)and(min-width: 600px){
+	body{
+		background-color: lightgreen;
+	}
+	.hat{
+	    background-size: 15%;
+	}
+   .horizontal{
+	    margin-left: 30%;
+    }
+}
+@media (max-width: 599px){
+	body{
+	    background: #66Bfb7;
+	}
+	
+	.notimp{
+		display: none;
+	}
+	.large{
+		height: 280px;
+	}
+	#m1 {
+		width: 80px;
+	}
+	.hat{
+		background-size: contain;
+	}
+    .horizontal{
+	margin-left: 0%;
+    }
+}
+#maket {
+    width: 100%; /* Ширина всей таблицы */
+}
+TD {
+    vertical-align: top; /* Вертикальное выравнивание в ячейках */
+    padding: 5px; /* Поля вокруг ячеек */
+}
+TD#leftcol {
+    width: 200px; /* Ширина левой колонки */
+    background: #ccc; /* Цвет фона левой колонки */
+    border: 1px solid #000; /* Параметры рамки */
+}
+TD#rightcol {
+    background: #fc3; /* Цвет фона правой колонки */
+    border: 1px solid #000; /* Параметры рамки */
+}
+#spacer {
+    width: 10px; /* Расстояние между колонками */
+}
+.hat{
+	height:20%;	
+	width:100%;
+	background-image: url("imgTinyartistsmodified.jpg");
+}
+.buttons div{
+	display: inline-block;
+}
+#SiteNameBackgr{
+	background-color: #66Bfb7;
+}
+#long{
+	width:100%;
+	height:20%;
+}

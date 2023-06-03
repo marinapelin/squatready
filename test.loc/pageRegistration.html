@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<meta charset=utf-8 />
+<link rel="stylesheet" type="text/css" href="style.css">
+<!-- <link rel="php" type="text/php" href="arrays.php"> -->
+
+<style>
+body{
+	background-color: #026873;
+    background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
+    linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
+    linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
+    linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
+	background-size: 13px, 29px, 37px, 53px;
+    }
+div{
+	display: inline-block;
+	margin-left: 20px;
+	height: 100px;
+	background-size: contain;
+	margin-top: 0%;
+    }
+.block1{
+	border-radius: 2px;
+	border: solid black;
+	background-image: url(gifblink.gif);
+	width:15%;
+	margin-left: 10%;
+    }
+.block2{
+	/*background-image: url(imgTinyartists.jpg);*/
+	background-color: #66Bfb7;
+	width: 45%;
+    }
+.block3{
+	border-radius: 2px;
+	border: solid black;
+	background-image: url(gifblink.gif);
+	width: 15%;
+    }
+#infbox{
+	background-color: #f5f5f5;
+	margin:10% 30%;
+    }
+form{
+	display: block;
+    width:250px;
+    padding:15px 20px;
+    margin-left:40%;
+    /*padding:4% 30%;*/
+    background:#f5f5f5;
+    border-radius: 10px;
+    }
+label{
+    display:block;
+	margin-top:1em;
+	margin-bottom:0.5em;
+    }
+label:first-child{
+    margin-top:0;
+    }
+input[type="text"],
+input[type="password"]{
+    width:100%;
+    border:1px solid #ccc;
+	padding:4px 5px;
+	background:white;
+	border-radius: 5px;
+	box-shadow:inset 0 4px 2px rgba(0, 0, 0, 0.2);
+	box-sizing:border-box;
+	}
+input[type="text"]:focus,
+input[type="password"]:focus{
+    box-shadow:0 0 5px rgba(50, 200, 255, 0.5);
+	outline: none;
+	}
+input[type="submit"]{
+    display:block;
+	margin-top:1em;
+	padding:5px 15px;
+	font-weight: bold;
+	color:#333;
+	background: white;
+	border: none;
+	border-radius: 12px;
+	background-image: linear-gradient(to bottom, #fff, #ddd);
+	box-shadow:inset 0 1px 2px rgba(0, 0, 0, 0.3);
+	text-shadow:0 1px 1px white;
+	}
+	@media (max-width: 599px){
+	.block3{
+		display:none;
+	}
+	.block1{
+		display: none;
+	}
+}
+</style>
+<script>
+function Error(){
+	document.getElementById("password").style.backgroundColor = 'red';
+}
+function check()
+{
+	document.getElementById("submit").addEventListener("click", function()
+	{
+		var pattern = new RegExp("(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}");
+		let form = document.forms.myform;
+        let elem = form.elements.login;
+		let elem2 = form.elements.password;
+        var passresult = elem2.value.match(pattern);
+		if(passresult!=elem2.value && elem.value!="" ){
+			alert("Password should be with at least 1 number, at least 1 letter small and big, with at least 1 special symbol @#$%^&, with no whitespaces, with at least 8 symbols");
+			Error();
+		}
+	});
+}
+</script>
+</head>
+<body onload="popup()">
+    <div class="line"></div>
+    <div class="block1"></div>
+    <div class="block2" id="SiteNameBackgr">
+    	<a href="index.php" id="SiteName"  style=" margin-left: 35%">Squat Ready<img src="https://img.icons8.com/color/48/gum-.png"></a>
+    </div>
+    <div class="block3"></div>
+	<div class="line"></div>
+
+	<form name="myform" class="login" method="post" action="actionOnReg.php">
+	    <h1>Registration</h1>
+		<label for="isadult">Are you 18+?</label>
+		<input type="checkbox" name="isadult" value="1">Adult
+	    <label for="login">Input email</label>
+		<input type="email" id="login" name="login" required/>
+		<label for="mobile">Input Mobile number</label>
+		<input type="tel" id="mobile" name="mobile" />
+
+		<label for="firstname">Input FirstName</label>
+		<input type="text" id="firstname" name="firstname" />
+		<label for="lastname">Input Lastname</label>
+    	<input type="text" id="lastname" name="lastname" required/>
+    	<label for="password" >Input password</label>
+		<input type="password" id="password" name="password"
+		minlength="8"
+		size="8" required/>
+		<label for="verpassword" >Repeat password</label>
+		<input type="password" name="verpassword"
+		minlength="8"
+		size="8" required/>
+		<select name ="membership">
+		        <option value="1">starter</option>
+		        <option value="2">inclusive</option>
+				<option value="0">decide later</option>
+        </select>
+    	<input id="submit" type="submit" value="Submit" onclick="check()"/>
+	</form>
+	<!-- <form name="who">
+		<label for="login">Who are you?</label>
+		<input type="radio" name="who" value="artist">Artist
+		<input type="radio" name="who" value="guest">Guest
+	</form>
+    <form name="myform" class="login" method="post" action=" "> --forms[0]-
+    	<label for="login">Input email</label>
+		<input type="text" id="login" name="login" required/>
+		<label for="nickname">Input nickname</label>
+    	<input type="text" id="nickname" name="nickname" required/>
+    	<label for="password" >Input password</label>
+    	<input type="password" id="password" name="password" minlength="8" pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$)"
+    	size="8" required/>
+    	<input id="submit" type="submit" value="Submit" onclick=""/>
+	</form>
+	 -->
+<!-- <p id="demo"></p> -->
+</body >
+</html>
+	<!--
+		// function popup()
+// {
+// 	document.body.style.backgroundColor = prompt('background color?', 'green');
+// }
+			//event.preventDefault();
+
+		if(passresult==elem2.value && elem.value!="" )
+		{
+			// localStorage.setItem('login', elem.value);
+			// localStorage.setItem('password', elem2.value);
+            // let log = localStorage.getItem('login');
+			// let pass = localStorage.getItem('password');
+	        // alert("Your login is " +log);
+			// alert("Your password " +pass);
+
+			//window.open("actionOnReg.php");
+		}
+		/*
+		(?=.*[0-9]) цифра должна встречаться по крайней мере один раз
+		(?=.*[a-z]) строчная буква должна встречаться по крайней мере один раз
+        (?=.*[A-Z]) заглавная буква должна встречаться по крайней мере один раз
+        (?=.*[@#$%^&+=]) специальный символ должен встречаться по крайней мере один раз
+        (?=\\S+$) нет whitespace разрешено во всей строке
+        .{8,} не менее 8 символов
+		*/
+		//password "aaZZa44@";
+			<div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false">
+<div id ="infbox"></div>
+	</div>
+			<div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false">
+	</div>
+	<?php echo 'А это будет обработано.'; ?>
+
+// showPrompt("Введите что-нибудь<br>...умное :)", function(value)
+// { alert(value); });
+//     let fieldset = form.elements.userFields;
+//     alert(fieldset); // HTMLFieldSetElement
+// // мы можем достать элемент по имени как из формы, так и из fieldset с ним
+//     alert(fieldset.elements.login == form.elements.login); // true
+
+
+// function endform(){
+// 	let form = document.createElement('form');
+//     form.action = 'https://google.com/search';
+//     form.method = 'GET';
+//     form.innerHTML = '<input name="q" value="test">';
+//     // перед отправкой формы, её нужно вставить в документ
+//     document.body.append(form);
+//     form.submit();
+// }
+
+
+			//document.body.classList.add('block2');
+
+
+		// 	let script = document.createElement('script');
+
+// // мы можем загрузить любой скрипт с любого домена
+// script.src = "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"
+// document.head.append(script);
+// 	script.onload = function() {
+//   // в скрипте создаётся вспомогательная функция с именем "_"
+//     alert(_); // функция доступна
+//     };
+	//document.head.append(script);
+	//new window.create('W');
+
+	<button id="myBtn">Try it</button>
+
+		<a href="#" class="btn btn-default like-button" role="button">
+	(<span class="like_counter">4</span>)
+	Like
+	<span class="glyphicon glyphicon-thumbs-up" aria hidden="true"></span></a>
+		<form name="my"><--forms[1]->
+		<input name="one" value="1">
+		<input name="two" value="2">
+	</form>
+		<form id="robby"><--forms[2]->
+		<input type="button" onclick="alert(document.forms[2].id);" value="robby's form" />
+	  </form>
+
+	  <form id="dave"><--forms[3]->
+		<input type="button" onclick="alert(document.forms[3].id);" value="dave's form" />
+	  </form>
+
+	  <form id="paul"><--forms[4]->
+		<input type="button" onclick="alert(document.forms[4].id);" value="paul's form" />
+	  </form>
+	  <form id="f5" ><--forms[5]->
+		<input type="radio" name="age" value="10">
+		<input type="radio" name="age" value="20">
+	  </form>
+	  <form id="form">
+		<fieldset name="userFields">
+		  <legend>info</legend>
+		  <input name="login" type="text">
+		</fieldset>
+	// 	let form = document.forms.f5;
+
+//     let ageElems = form.elements.age;
+
+//     //alert(ageElems[0]); // [object HTMLInputElement]
+
+// 	//document.getElementById('infbox').innerHTML += ageElems[0];
+//     $(function (){
+// 		$(".like-button".click(function(){
+// 			var like_counter = $(".like-counter");
+// 			var likes=parseInt(like-counter.text());
+// 			if ($(this).hasClass('liked')){
+// 				like_counter.text(likes-1);
+// 			}
+// 			else{
+// 				like_counter.text(likes+1);
+// 			}
+// 			$(this).toggleClass('liked')
+// 		}));
+
+// 	});
+	// получаем форму
+	// let form = document.forms.my; // <form name="my"> element
+	// // получаем элемент
+	// let elem = form.elements.one; // <input name="one"> element
+	// alert(elem.value); // 1
+			// document.getElementById("myBtn").addEventListener("click", function()
+		// {
+ 	    // document.getElementById('infbox').innerHTML += "Helo World";
+		// });
+
+// 	 alert(form.elements.login); // <input name="login">
+
+// 	$(function (){
+// 		myStorage = window.localStorage;
+// 		localStorage.setItem(login, password);
+// 		//let tom = localStorage.getItem('Tom');
+// 		let log = localStorage.getItem(login);
+// 		let pass = localStorage.getItem(password);
+
+// 		//alert(tom);
+// 		alert(log);
+// 		alert(pass);
+
+// 		//delete
+// 		localStorage.removeItem(password); // вернёт undefined
+// 		alert(log);
+// 		alert(pass);
+
+// 		//delete all
+// 		localStorage.clear();
+// 		alert(log);
+
+
+// 	});
+
+
+
+
+
+
+
+
+
+	-->
